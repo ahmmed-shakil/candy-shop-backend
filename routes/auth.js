@@ -28,7 +28,7 @@ router.post("/login", async (req, res) => {
 
         const hashedPassword = CryptoJS.AES.decrypt(user.password, process.env.PASS_SEC);
         const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
-        password !== req.body.password && res.status(401).json("Wrong credentials!");
+        originalPassword !== req.body.password && res.status(401).json("Wrong credentials!");
 
         const accessToken = jwt.sign({
             id: user._id,
