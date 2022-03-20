@@ -35,7 +35,7 @@ router.put("/:userId", async (req, res) => {
     try {
         const payment = await Payment.findByIdAndUpdate(req.params.id, {
             $set: {
-                payment: req.body;
+                payment: req.body
             }
         }, { new: true })
         res.status(200).json(payment);
