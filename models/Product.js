@@ -8,7 +8,7 @@ const ProductSchema = new mongoose.Schema(
             unique: true
         },
         categories: {
-            type: Array
+            type: String
         },
         desc1: {
             type: String,
